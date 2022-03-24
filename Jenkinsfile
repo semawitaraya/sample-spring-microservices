@@ -42,8 +42,8 @@ stage ('dockerimageBuild')
         
     }
 }
-    
-    
+}  
+}   
 //stage ('k8sdeployment') 
    // {
     //    steps {
