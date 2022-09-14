@@ -45,7 +45,7 @@ stage ('dockerimageBuild')
  stage ('Deploying as a container')
     {
         steps ('deploying'){
-            sh "docker run -d --name c1 -p 2222:2222 account-service "
+            sh "sudo docker run -d --name c1 -p 2222:2222 account-service "
          
         }
         
