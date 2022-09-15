@@ -19,7 +19,7 @@ stage ('Build')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/Java-job-deplyment/account-service ; mvn clean install " 
+       sh "cd /home/semawit/sample-spring-microservices/account-service ; mvn clean install " 
     }
 }
 
@@ -28,16 +28,16 @@ stage ('dockerimageBuild')
     {
     steps
     {
-        sh "cd /home/ubuntu/workspace/Java-job-deplyment/account-service; sudo docker build -t account-service . " 
+        sh "cd /home/semawit/sample-spring-microservices/account-service; sudo docker build -t account-service . " 
     }
 }
      stage ('dockerimagepush ') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/Java-job-deplyment/account-service ; sudo  docker login -uankit1111 -pmiet@1234 "
-        sh "cd /home/ubuntu/workspace/Java-job-deplyment/account-service ; sudo docker tag account-service ankit1111/account-service "
-        sh "cd /home/ubuntu/workspace/Java-job-deplyment/account-service ; sudo docker push ankit1111/account-service  "
+       sh "cd /home/semawit/sample-spring-microservices/account-service ; sudo  docker login -u938169387 -pnani@2020 "
+        sh "cd /home/semawit/sample-spring-microservices/account-service ; sudo docker tag account-service 938169387/spring_microservices "
+        sh "cd /home/semawit/sample-spring-microservices/account-service ; sudo docker push 938169387/spring_microservices  "
         
         
     }
@@ -45,7 +45,7 @@ stage ('dockerimageBuild')
  stage ('Deploying as a container')
     {
         steps ('deploying'){
-            sh "sudo docker run -d --name c1 -p 2222:2222 account-service "
+            sh "sudo docker run -d --name c23 -p 2222:2222 account-service "
          
         }
         
